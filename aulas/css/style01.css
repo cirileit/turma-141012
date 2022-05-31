@@ -49,11 +49,11 @@ ul {
 #sidebar {
     background-color: #32a4e7;
     color: white;
-    padding: 10px;
+    padding: 17px 20px;
     width: 180px;
     right: 0;
     top: 0;
-    bottom: 0;
+    bottom: 9;
     position: absolute;
     margin: 4px 0px;
 }
@@ -65,7 +65,7 @@ ul {
 #bottom {
     background-color: #f1f1f1;
     border: 1px solid #d4d4d4;
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-size: 70%;
     line-height: 14px;
     text-align: center;
