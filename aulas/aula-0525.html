@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style02.css">
     <link rel="stylesheet" href="css/style03.css">
     <link rel="stylesheet" href="css/style04.css">
+    <link rel="stylesheet" href="css/style05.css">
 
 </head>
 
@@ -25,6 +26,7 @@
                 <li class="item-menu"onclick="onstyle (1)">Folha de estilo 2</li>
                 <li class="item-menu"onclick="onstyle (2)">Folha de estilo 3</li>
                 <li class="item-menu"onclick="onstyle (3)">Folha de estilo 4</li>
+                <li class="item-menu"onclick="onstyle (4)">Folha de estilo 5</li>
                 <li class="item-menu"onclick="nostyle ()">Sem folha de estilo</li>
             </ul>
         </div>
@@ -40,12 +42,13 @@
                 <a onclick="onstyle (1)" href="#"> Stylesheet2</a>,
                 <a onclick="onstyle (2)" href="#"> Stylesheet3</a>,
                 <a onclick="onstyle (3)" href="#"> Stylesheet4</a>.
+                <a onclick="onstyle (4)" href="#"> Stylesheet5</a>.
 
             </p>
         <div>
-            <h2>Sem estilos</h2> <br>
-            <p>Esta página usa elementos DIV para agrupar diferentes seções da página HTML. Clique aqui para ver como fica a página sem folha de estilo:
-               <a onclick="nostyle ()" href="#">Sem folha</a> de estilo .
+            <h2>Sem estilos</h2> 
+            <p>Esta página usa elementos DIV para agrupar diferentes seções da página HTML. Clique aqui para ver como fica a página sem folha de estilo:<br>
+               <a onclick="nostyle ()" href="#">Sem folha de estilo </a>.
             </p>
         </div>
         <div id="sidebar">
@@ -63,6 +66,7 @@
             document.styleSheets[1].disabled = true;
             document.styleSheets[2].disabled = true;
             document.styleSheets[3].disabled = true;
+            document.styleSheets[4].disabled = true;
 
          }
          function onstyle(n){

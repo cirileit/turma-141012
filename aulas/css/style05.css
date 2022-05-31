@@ -5,7 +5,7 @@ body {
 }
 
 #top {
-    background-color: #04AA6D;
+    background-color: #87bb27;
     color: #ffffff;
     padding: 15px;
 }
@@ -22,16 +22,16 @@ ul {
     list-style-type: none;
     cursor: pointer;
     background-color: #f1f1f1;
-    border: 1px solid #d4d4d4;
+    border: 1px solid #20c050;
     margin: 4px;
 }
 
 .item-menu:hover {
-    background-color: #ffffff;
+    background-color: #87bb27;
 }
 
-.item-menu:first-child {
-    background-color: #04AA6D;
+.item-menu {
+    background-color: #0b0f0e;
     color: #ffffff;
     font-weight: bold;
 }
@@ -54,7 +54,7 @@ ul {
     right: 0;
     top: 0;
     bottom: 0;
-    position: absolute;
+    position:relative ;
     margin: 4px 0px;
 }
 
