@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar Título</title>
+
+    
+</head>
+<body>
+    <h1 id="titulo">Olá Mundo JS </h1>
+   
+    <script>
+
+        function changeTitle() {
+            document.getElementById("titulo").innerHTML = "Título modificado via <b>FUNCTION</b>";
+        }
+
+    </script>
+    <br>
+    <button onclick="changeTitle()">Personalizar Título</button>
+    <button onclick="newTitle()" class="btn btn-outline-dark btn-lg m-3 ">Alterar Título</button>
+    <br>
+    
+    
+    <script>
+
+      
+      
+
+        function inputName() {
+
+            let nome = prompt("Digite o seu nome!");
+            alert("O nome digitado foi: " + nome);
+
+        }
+
+
+    </script>
+            <script>
+                function newTitle() {
+                    let tituloNovo = prompt('Digite um novo título e veja a mágica acontecer: ');
+                    document.getElementById('titulo').innerHTML = tituloNovo;   
+        
+                }
+            </script>
+        
+    </body>
+    </html>
