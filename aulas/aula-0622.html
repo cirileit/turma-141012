@@ -14,7 +14,7 @@
             text-align: center;
         }
         h2{
-            background-color:darkolivegreen ;
+            background-color:cadetblue ;
             padding: 15px;
             border-radius: 15px;
             color:white;
@@ -26,7 +26,7 @@
             border-radius: 15px;
         }
         h3:hover{
-            background-color:rgb(204, 204, 204);
+            background-color:#cccccc;
             cursor: pointer;
         }
         h3 span{
@@ -60,12 +60,16 @@
             Resposta 
 
         </h3>
+        <div class="btn btn-primary" onclick="next()">
+            next
+        </div>
+        </div>
         <script>
         
         
             function verificarResposta(i){
                 if(quiz.ponto >= 0) return;
-                
+
                 document.querySelectorAll('h3')[i].style.backgroundColor = '#ff5555';
                 document.querySelectorAll('h3')[quiz.correta].style.backgroundColor = '#56c856';
                 if(i == quiz.correta){
@@ -74,21 +78,51 @@
                 quiz.ponto = 0;
             }
         }
-                let quiz = {
+                let lsPergunta = [
+                    {
                 pergunta:"Qual foi o ultimo ano que o BR ganhou copa?",
                 resposta:["1970", "2002","1962" ,"1994"],
                 correta:1
-            }
+                    },{
+                        pergunta:"Qual o nome do ultimo presidente dos ESTADOS UNIDOS?",
+                resposta:[ "George Bush","Donald Trump" ,"Joe biden","Dwight Eisenhower"],
+                correta:2
+                    },{
+                        pergunta:"Qual maior planeta solar?",
+                resposta:["júpiter", "Saturno","Urano" ,"Neturno"],
+                correta:0
+                    }
+                ];
+                let quiz = {};
+                function carregarQuiz(nPergunta){
 
-            document.querySelector('h2').innerHTML = quiz.pergunta;
-for (let i = 0; i < 4; i++) {
-    document.querySelectorAll('h3')[i].innerHTML = quiz.resposta[i];
-    let x = i;
-    document.querySelectorAll('h3')[i].addEventListener(
-        'click',()=>{verificarResposta(x)});
+              
+                quiz = lsPergunta[nPergunta];
+                document.querySelector('h2').innerHTML = quiz.pergunta;
+                for (let i = 0; i < 4; i++) {
+                document.querySelectorAll('h3')[i].style.backgroundColor= '#cccccc';
+                document.querySelectorAll('h3')[i].innerHTML = quiz.resposta[i];
+                let x = i;
+                document.querySelectorAll('h3')[i].addEventListener(
+                'click',()=>{verificarResposta(x)});
+             }
     
 }
 
+let quizAtual = 0;
+carregarQuiz(quizAtual);
+function next(){
+    //console.log(quizAtual);
+   // console.log(isPergunta.length);
+   // console.log(quizAtual== lsPergunta.length-1);
+    if(quiz.ponto == undefined){
+        alert('Antes de ir para o próxima pergunta responda essa!');
+        return;
+    }
+    if(quizAtual == lsPergunta.length-1) return;
+    carregarQuiz(++quizAtual);
+
+}
            
 
 
