@@ -42,7 +42,7 @@
         </h2>
         <h3>
             <span>A</span>
-            Resposta 
+            <p>Resposta </p>
 
         </h3>
         <h3 >
@@ -61,16 +61,39 @@
 
         </h3>
         <script>
-            document.querySelectorAll('h3')[0].addEventListener('click',()=>{verificarResposta()});
         
-            function verificarResposta(){
-                document.querySelectorAll('h3')[0].style.backgroundColor = '#ff5555';
-                document.querySelectorAll('h3')[2].style.backgroundColor = '#56c856';
+        
+            function verificarResposta(i){
+                if(quiz.ponto >= 0) return;
+                
+                document.querySelectorAll('h3')[i].style.backgroundColor = '#ff5555';
+                document.querySelectorAll('h3')[quiz.correta].style.backgroundColor = '#56c856';
+                if(i == quiz.correta){
+                       quiz.ponto = 1;
+            }else{
+                quiz.ponto = 0;
             }
-        </script>
+        }
+                let quiz = {
+                pergunta:"Qual foi o ultimo ano que o BR ganhou copa?",
+                resposta:["1970", "2002","1962" ,"1994"],
+                correta:1
+            }
 
-    </div>
-</body>
+            document.querySelector('h2').innerHTML = quiz.pergunta;
+for (let i = 0; i < 4; i++) {
+    document.querySelectorAll('h3')[i].innerHTML = quiz.resposta[i];
+    let x = i;
+    document.querySelectorAll('h3')[i].addEventListener(
+        'click',()=>{verificarResposta(x)});
+    
+}
+
+           
+
+
+            </script>
+            </body>
 
 </html>
 
