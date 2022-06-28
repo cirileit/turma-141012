@@ -4,129 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de quiz</title>
+    <title>Gerenciador Perguntas Quiz</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-   
     <style>
-        h1{
-            text-align: center;
-        }
         h2{
-            background-color:cadetblue ;
-            padding: 15px;
-            border-radius: 15px;
-            color:white;
             text-align: center;
         }
-        h3{
-            background-color:rgb(233, 233, 233) ;
-            padding: 15px;
-            border-radius: 15px;
-        }
-        h3,h4:hover{
-            background-color:#cccccc;
-            cursor: pointer;
-        }
-        h3 span{
-           font-weight: bolder; 
-        }
-
-    </style>
-
+        </style>
     <div class="container">
-        <h1>Pergunta QUIZ</h1>
-        <h2></h2>
-        <h3 ></h3>
-        <h3></h3>
-        <h3 ></h3>
-        <h3 ></h3>
-       
-        <h5>
-    
-            
-               <label class="radio-inline">
-                 <input type="radio" name="opção" checked>Opção 1
-               </label>
-               <label class="radio-inline">
-                 <input type="radio" name="opção">Opção 2
-               </label>
-               <label class="radio-inline">
-                 <input type="radio" name="opção">Opção 3
-               </label>
-               <label class="radio-inline">
-                 <input type="radio" name="opção">Opção 4
-               </label>
-            
-            </h5>
-            
-            
-
-        <h4 class="btn" onclick="Enviar()">
-            Enviar
-        </h4>
+        <h2>Gerenciador Perguntas Quiz</h2>
+        <div class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pergunta">Pergunta:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="pergunta" placeholder="" name="pergunta" value="Contra qual clube Pelé marcou seu milésimo gol?">
+              </div>
+            </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="opcao01">Opção 01:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="opcao01" placeholder="" value="Vasco">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="opcao02">Opção 02:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="opcao02" placeholder="" value="Portuguesa">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="opcao03">Opção 03:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="opcao03" placeholder="" value="Corinthians">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="opcao04">Opção 04:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="opcao04" placeholder="" value="Cruzeiro">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="">Opção Correta:</label>
+            <div class="col-sm-10">
+                <label class="radio-inline">
+                    <input type="radio" name="opcaoCorreta" value="1" checked>Opção 01
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="opcaoCorreta" value="2">Opção 02
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="opcaoCorreta"value="3">Opção 03
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="opcaoCorreta"value="4">Opção 04
+                  </label>
+            </div>
+          </div>
+         
+          
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit"onclick="gravar()" class="btn btn-default">Submit</button>
+            </div>
+          </div>
         </div>
+      </div>
+      
+    <script>
+   function gravar(){
+    let lsInput = document.querySelectorAll('input');
+    let quiz = {resposta:[]};
+    for (i in lista){
+           // console.log(lista[i].value);
+            if(i == 0){
+                quiz.pergunta = lista[i].value;
+           }
+  if (i >=1 && i <= 4){
+  quiz.respostas[i-1]=lista[i].value;
 
-
-
-        <script>
-        
-        
-            function verificarResposta(i){
-                if(quiz.ponto >= 0) return;
-
-                document.querySelectorAll('h3,h5')[i].style.backgroundColor = '#ff5555';
-                document.querySelectorAll('h3,h5')[quiz.correta].style.backgroundColor = '#56c856';
-                if(i == quiz.correta){
-                       quiz.ponto = 1;
-            }else{
-                quiz.ponto = 0;
-            }
-        }
-                let lsPergunta = [
-                    {
-                        
-                pergunta:" Quais as duas línguas mais faladas no mundo?",
-                resposta:["Inglês e espanhol", "Inglês e mandarim chinês","Mandarim chinês e francês" ,"Inglês e português"],
-                correta:1
-                    },
-
-                ];
-                let quiz = {};
-                function carregarQuiz(nPergunta){
-
-              
-                quiz = lsPergunta[nPergunta];
-                document.querySelector('h2').innerHTML = quiz.pergunta;
-                for (let i = 0; i < 4; i++) {
-                document.querySelectorAll('h3,h5')[i].style.backgroundColor= '#cccccc';
-                document.querySelectorAll('h3,h5')[i].innerHTML = quiz.resposta[i];
-                let x = i;
-                document.querySelectorAll('h3,h5')[i].addEventListener(
-                'click',()=>{verificarResposta(x)});
-             }
-    
-}
-
-let quizAtual = 0;
-carregarQuiz(quizAtual);
-function Enviar(){
-  
-    if(quiz.ponto == undefined){
-        alert('Antes de ir para o próxima pergunta responda essa!');
-        return;
+  }
+  if(i >= 5 && i <= 8){
+ // console.log('${i-5} ${lista[i].checked}')
+  if(lista[i].checked){
+    quiz.correta = i-5;
+  }
+  }
     }
-    if(quizAtual == lsPergunta.length-1) return;
-    carregarQuiz(++quizAtual);
-
-}
-           
-
-
-
-            </script>
-
-            </body>
-
+    console.log(quiz);
+   }
+    </script>
+</body>
 </html>
