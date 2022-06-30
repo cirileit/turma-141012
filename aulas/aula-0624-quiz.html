@@ -38,33 +38,29 @@
 
     </style>
 
-    <div class="container">
+      <div class="container">
         <h1>Quiz do SENAI</h1>
         <h2>
             Pergunta?
         </h2>
         <h3>
             <span>A</span>
-            <p>Resposta </p>
-
+            Resposta
         </h3>
-        <h3 >
+        <h3>
             <span>B</span>
-            Resposta 
-
+            Resposta
         </h3>
-        <h3 >
+        <h3>
             <span>C</span>
-            Resposta 
-
+            Resposta
         </h3>
-        <h3 >
+        <h3>
             <span>D</span>
-            Resposta 
-
+            Resposta
         </h3>
         <div class="btn btn-primary" id="next" onclick="next()">
-            next
+            Next
         </div>
         <div class="btn btn-primary" id="reiniciar" onclick="reiniciar()">
            Reiniciar
@@ -92,93 +88,83 @@
                 let lsPergunta = [
                     {
                 pergunta:"Qual foi o ultimo ano que o BR ganhou copa?",
-                resposta:["1970", "2002","1962" ,"1994"],
+                respostas:["1970", "2002","1962" ,"1994"],
                 correta:1
-                    },{
-                        pergunta:"Qual o nome do ultimo presidente dos ESTADOS UNIDOS?",
-                resposta:[ "George Bush","Donald Trump" ,"Joe biden","Dwight Eisenhower"],
+                    },
+                    {
+                pergunta:"Qual o nome do ultimo presidente dos ESTADOS UNIDOS?",
+                respostas:[ "George Bush","Donald Trump" ,"Joe biden","Dwight Eisenhower"],
                 correta:2
-                    },{
-                        pergunta:"Qual maior planeta solar?",
-                resposta:["júpiter", "Saturno","Urano" ,"Neturno"],
+                    },
+                    {
+                pergunta:"Qual maior planeta solar?",
+                respostas:["júpiter", "Saturno","Urano" ,"Neturno"],
                 correta:0
                     }
                 ];
 
-                let baseQuiz = localSorage.getItem('baseQuiz');
-              if(baseQuiz == null){
-                localStorage.setItem('baseQuiz', JSON.stringify(lsPergunta));
-              }else{
-                 lsPergunta = JSON.parse(baseQuiz);
-              }
-                let quiz = {};
-                function carregarQuiz(nPergunta){
-
-              
-                quiz = lsPergunta[nPergunta];
-                document.querySelector('h2').innerHTML = quiz.pergunta;
-                for (let i = 0; i < 4; i++) {
-                document.querySelectorAll('h3')[i].style.backgroundColor= '#cccccc';
-                document.querySelectorAll('h3')[i].innerHTML = quiz.resposta[i];
+                let baseQuiz = localStorage.getItem('baseQuiz');
+        if (baseQuiz == null) {
+            localStorage.setItem('baseQuiz', JSON.stringify(lsPergunta));
+        } else {
+            lsPergunta = JSON.parse(baseQuiz);
+        }
+        let quiz = {};
+        function carregarQuiz(nPergunta) {
+            quiz = lsPergunta[nPergunta];
+            document.querySelector('h2').innerHTML = quiz.pergunta;
+            for (let i = 0; i < 4; i++) {
+                document.querySelectorAll('h3')[i].style.backgroundColor = '#cccccc';
+                document.querySelectorAll('h3')[i].innerHTML = quiz.respostas[i];
                 let x = i;
                 document.querySelectorAll('h3')[i].addEventListener(
-                'click',()=>{verificarResposta(x)});
-             }
-    
-}
+                    'click', () => { verificarResposta(x) });
+            }
+        }
 
-let quizAtual = 0;
-carregarQuiz(quizAtual);
-function next(){
-    //console.log(quizAtual);
-   // console.log(isPergunta.length);
-   // console.log(quizAtual== lsPergunta.length-1);
-    if(quiz.ponto == undefined){
-        alert('Antes de ir para o próxima pergunta responda essa!');
-        return;
-    }
-    if(quizAtual == lsPergunta.length-1){
-    fimQuiz();
-    return;
-}
-           
-carregarQuiz(++quizAtual);
+         
+        let quizAtual = 0;
+        carregarQuiz(quizAtual);
+        function next() {
+            // console.log(quizAtual);
+            // console.log(lsPergunta.length-1);
+            // console.log(quizAtual == lsPergunta.length-1);
+            if (quiz.ponto == undefined) {
+                alert('Antes de ir para o próxima pergunta responda essa!');
+                return;
+            }
+            if (quizAtual == lsPergunta.length - 1) {
+                fimQuiz();
+                return;
+            }
+            carregarQuiz(++quizAtual);
+        }
 
-}
-function fimQuiz() {
-    document.querySelector('h2').innerHTML = 'Resultado do Quiz';
-    document.querySelectorAll('h3')[0].innerHTML = 'Acertos: ${placar.acertos}';
-    document.querySelectorAll('h3')[1].innerHTML = 'Erros: ${placar.erros}';
-   
-    document.querySelectorAll('h3')[0].style.backgroundColor = '#56c856';
-    document.querySelectorAll('h3')[1].style.backgroundColor = '#ff5555';
-    
-    document.querySelectorAll('h3')[2].style.display = 'none'
-    document.querySelectorAll('h3')[3].style.display = 'none'
+        function fimQuiz() {
+            document.querySelector('h2').innerHTML = 'Resultado do Quiz';
+            document.querySelectorAll('h3')[0].innerHTML = `Acertos: ${placar.acertos}`;
+            document.querySelectorAll('h3')[1].innerHTML = `Erros: ${placar.erros}`;
 
-    document.querySelector('#next').style.display = 'none'
-    document.querySelector('#reiniciar').style.display = 'none'
-    
-}
-//document.querySelector('#reiniciar').style.display = 'none'
+            document.querySelectorAll('h3')[0].style.backgroundColor = '#56c856';
+            document.querySelectorAll('h3')[1].style.backgroundColor = '#ff5555';
 
-function reiniciar() {
-    let resp = confirm('Deseja reiniciar o Quiz');
-    if(resp){
-        window.location.href = "aulas/aula-0624-quiz.html";
-    }
-}
-            </script>
-            </body>
+            document.querySelectorAll('h3')[2].style.display = 'none';
+            document.querySelectorAll('h3')[3].style.display = 'none';
+            
+            document.querySelector('#next').style.display = 'none';
+            document.querySelector('#reiniciar').style.display = 'block';
+        }
+        document.querySelector('#reiniciar').style.display = 'none';
+
+        function reiniciar() {
+            let resp = confirm('Deseja reiniciar o Quiz?');
+            if(resp){
+                window.location.href = "/aulas/aula-0624-quiz.html";
+            }
+        }
+    </script>
+
+
+</body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
