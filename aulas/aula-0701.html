@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,18 +18,18 @@ h1 {
     margin-bottom: 6px;
 }
 span {
- font-size: 13px;
-font-family: Arial, Helvetica, sans-serif;
- color: darkblue;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
 }
 p {
     margin: 0px;
 }
 body {
-width: 80%;
- display: block;
- margin-left: auto;
-  margin-right: auto;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .questao {
     background-color: #e0f7faa1;
@@ -53,8 +57,8 @@ input[type='button'] {
 <div id="corpo">
  <div class="questao">
         <h1>
-     Questã 01:<span>tabuada
-     
+     Questã 01:<span>Tabuada
+     <a href="detalhes.html" target="_blank">detalhar</a></span>
      </h1>
         
      <input type="text" id="n" style="display: inline" />
@@ -70,12 +74,196 @@ input[type='button'] {
                 resultado += `${n} x ${i} = ${n*i}<br>`;
                 i++;
             } while (i <= 10);
-            // console.log(resultado);
+             console.log(resultado);
             document.getElementById('rs-q1').innerHTML = resultado;
         }
 
     </script>
- 
+    <div class="questao">
+        <h1>
+            Questã 02:<span>Mostrar os números entre 2 valores
+                <a href="detalhes.html" target="_blank">detalhar</a></span>
+        </h1>
+    <p id="rs-q2">Resultado: Os número entre A e Z são (x,x,x,x,x).</p>
+ <label for="">Valor 01:</label>
+ <input type="text" id="n1" />
+<label for="">Valor 02:</label>
+<input type="text" id="n2" />
+ <input type="button" value="Executar" onclick="q2()" />
+    </div>
+    <script>
+        function q2() {
+            let n1 = +document.getElementById('n1').value;
+            let n2 = document.getElementById('n2').value;
+            console.log(i);
+            let resultado = "";
+            for (let i = n1 + 1; i < Number(n2); i++) {
+                console.log(resultado);
+                resultado += `,${i}`;
+
+            }
+            resultado = `Resultado: Os número entre ${n1} e ${n2} são (${resultado.substr(1)})`;
+            document.getElementById('rs-q2').innerHTML = resultado;
+        }
+
+
+    </script>
+    <div class="questao">
+        <h1>
+            Questã 03:<span>
+                Lista armazenada
+                <a href="detalhes.html" target="_blank">detalhar</a></span>
+        </h1>
+        <p id="rs-q3">Resultado: A lista de itens é [xxxx,xxxx,xxxx,xxxxx]</p>
+        <label for="">Item:</label>
+        <input type="text" id="item" />
+        <input type="button" value="Add" onclick="addItem()" />
+        <input type="button" value="Show" onclick="showItens()" />
+        <input type="button" value="Clear" onclick="clearItens()" />
+    </div>
+    <script>
+        let lsItem = [];
+        function clearItens() {
+            lsItem = [];
+            showItens();
+        }
+
+        function showItens() {
+            let resultado = `Resultado: A lista de itens é [${lsItem}]`;
+            document.getElementById("rs-q3").innerHTML = resultado;
+        }
+
+        function addItem() {
+            let item = document.getElementById("item").value;
+            lsItem.push(item);
+            showItens();
+        }
+    </script>
+    <div class="questao">
+        <h1>
+            Questã 04:<span>Mega SENA
+                <a href="detalhes.html" target="_blank">detalhar</a></span>
+        </h1>
+        <p id="rs-q4">Resultado:00,00,00,00,00,00</p>
+        <input type="button" value="Sortear!" onclick="sortear()" />
+    </div>
+    <script>
+        function sortear() {
+     let n = 0;
+     let i = 1;
+     let jogo = [];
+     while (i <= 6) {
+         n = Math.trunc((Math.random() * 59) + 1);
+         jogo.push(n);
+         i++;
+         }
+        console.log(jogo);
+        document.getElementById('rs-q4').innerHTML = `Resultado:${jogo}`;
+        }
+    </script>
+    <div class="questao">
+        <h1>
+         Questã 05:<span>
+         Lista homens e mulheres
+         <a href="detalhes.html" target="_blank">detalhar</a></span>
+        </h1>
+        <p id="">
+        <p id="rs-q5">
+        Resultado: <br />Lista de homens [xxxx,xxxx,xxxx,xxxxx] <br />Lista de
+        mulheres [xxxx,xxxx,xxxx,xxxxx]
+        </p>
+        <label for="">Nome:</label>
+        
+        <input type="text" id="nome-pessoa" />
+        <label for="">Sexo:</label>
+        
+        <select name="sexo" id="sx-pessoa">
+         <option value="M">Masculino</option>
+         <option value="F">Feminino</option>
+        </select>
+     </div> 
+        <input type="button" value="Add" onclick="addPessoa()" />
+        <input type="button" value="Show" onclick="showPessoas()" />
+        <input type="button" value="Clear" onclick="clearPessoas()" />
+    </div>
+    <script>
+        let lsHomem = [];
+        let lsMulher = [];
+
+        function clearPessoas() {
+        lsMulher = '';
+        lsHomem = [];
+        }
+       function showPessoas() {
+            let resultado =
+                `Resultado: <br />Lista de homens [${lsHomem}] <br />Lista de
+            mulheres [${lsMulher}]`;
+            document.getElementById("rs-q5").innerHTML = resultado;
+        }
+        function addPessoa() {
+        let nome = document.getElementById('nome-pessoa').value;
+        let sexo = document.getElementById('sx-pessoa').value;
+        switch (sexo) {
+            case "M":
+            lsHomem[lsHomem.length] = nome;
+            break;
+            case "F":
+        lsMulher[lsMulher.length] = nome;
+        break;
+       default:
+        break;
+         }
+         console.log(lsHomem);
+        showPessoas();
+         if (sexo == 'M') {
+         lsHomem.push(nome);
+         } else if (sexo == 'F') {
+          lsMulher.push(nome);
+         } else {
+          }
+         }
+    </script>
+    <div class="questao">
+        <h1>
+         DESAFIOO!:<span>
+                Jo-Ken-Po <a href="detalhes.html" target="_blank">detalhar</a></span>
+        </h1>
+        <p id="resultado-desafio">Resultado: [Vitória|Derrota|Empate]</p>
+        <span onclick="jogar('✊🏽')" onmouseover="this.style.fontSize = '50px'"
+            onmouseout="this.style.fontSize = '30px'" class="mao">✊🏽</span>
+        <span onclick="jogar('🖐🏽')" onmouseover="this.style.fontSize = '50px'"
+            onmouseout="this.style.fontSize = '30px'" class="mao">🖐🏽</span>
+        <span onclick="jogar('✌🏽')" onmouseover="this.style.fontSize = '50px'"
+            onmouseout="this.style.fontSize = '30px'" class="mao">✌🏽</span>
+        #
+        <span class="adversario" id="adversario">👋🏽</span>
+        <p id="placar"></p>
+        <script>
+            let qtV = 0;
+            let qtD = 0;
+            let qtE = 0;
+            function jogar(j) {
+                 console.log(j);
+                let pc = Math.trunc(Math.random() * 3);
+                let opcoes = ['✊🏽', '🖐🏽', '✌🏽']
+                pc = opcoes[pc];
+                document.getElementById("adversario").innerHTML = `${j} X ${pc}`;
+                let resultado = "Resultado: ";
+                if (j == pc) {
+                    resultado += "Empate";
+                    qtE++;
+                } else if ((j == '✊🏽' && pc == '✌🏽')
+                    || (j == '🖐🏽' && pc == '✊🏽')
+                    || (j == '✌🏽' && pc == '🖐🏽')) {
+                    resultado += "Vitoria";
+                    qtV++;
+                } else {
+                    resultado += "Derrota";
+                    qtD++;
+                }
+         document.getElementById("resultado-desafio").innerHTML = resultado;
+         document.getElementById("placar").innerHTML = `Vitórias (${qtV}) - Empates (${qtE}) - Derrotas (${qtD})`;
+            }
         </script>
     </div>
 </div>
