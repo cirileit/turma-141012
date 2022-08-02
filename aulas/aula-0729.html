@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Tarefas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <style>
+        tbody {
+            cursor: pointer;
+        }
+    </style>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="">Pesquisa</label>
+                    <input type="hidden" id="linha">
+                    <input type="text" class="form-control" id="tarefa" value="">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <br>
+               9y
+                
+            </div>
+            
+        </div>
+     
+        </div>
+    </div>
+    
+    <script>
+        
+
+        let corpoTabela = localStorage.getItem('corpoTabela');
+
+        if (corpoTabela == null) {
+            corpoTabela = '<tr><td>Nenhuma Pesquisa Encontrada</td></tr>';
+            localStorage.setItem('corpoTabela', corpoTabela);
+
+        }
+        document.querySelector('tbody').innerHTML = corpoTabela;
+        onclickNasLinhas();
+
+
+        function incluirTarefa() {
+            
+            let tarefa = document.getElementById('tarefa').value;
+            let linha = document.getElementById('linha').value;
+            if (tarefa.length <= 1) {
+                alert('NÃO ENCOTRATO!');
+                return;
+            }
+
+           
+           
+        }
+
+       
+        function onclickNasLinhas() {
+            qtLinhas = document.getElementsByTagName('td').length;
+            for (i = 0; i < qtLinhas; i++) {
+                let j = i;
+                document.getElementsByTagName('td')[i].addEventListener('click', function () { editar(this.innerHTML, j) });
+            }
+        }
+        function Pesquisa(buscar){
+        xhttp.open("GET",`https://viacep.com.br/ws/${pesquisas}/json/`);
+        xhttp.send();
+        xhttp.onload = function () {
+            let obj = this.response;
+            obj = JSON.parse(obj);
+            document.getElementById("endereco-completo").value = `${obj.logradouro},${obj.completo},${obj.bairro}`;
+
+        }
+
+    }
+
+       
+
+    </script>
+</body>
+
+</html>
