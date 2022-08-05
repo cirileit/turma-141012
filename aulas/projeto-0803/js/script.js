@@ -4,7 +4,7 @@ function buscarProduto() {
     xhttp.open("GET","https://pascoa-chiquinha.herokuapp.com/produto/");
     xhttp.send();
     xhttp.onload = function () {
-        = this.response;
+        lsProduto= this.response;
         lsProduto = JSON.parse(lsProduto);
         montarListaProdutosHtml(lsProduto);
 }
@@ -15,12 +15,12 @@ function montarListaProdutosHtml(lsProduto){
   for (produto of lsProduto) {
        listaProduto += `
        <div class="embrulho"">
-       <div id="produto">
+       <div class="produto">
            <img src="${produto.imagem}" alt="">
            <p> ${produto.nome}
                <span class="valor">${produto.valor.toFixed(2)}</span> 
            </p>
-           <i class="material-icons" onclick="addProdutoCarrinho(${i})">&#xe8cc;</i>
+           <i class="material-icons carrinho" onclick="addProdutoCarrinho(${i})">&#xe8cc;</i>
        </div>
        </div>
        `;
@@ -33,11 +33,19 @@ function addProdutoCarrinho (i) {
    let produto = lsProduto[i];
    if(produto.carrinho == false){
     produto.carrinho = true;
-    document.getElementsByClassName("material-icons")[i].style.color = "#e66b6b";
+    document.getElementsByClassName("carrinho")[i].style.color = "#e66b6b";
    }else{
     produto.carrinho = false;
-    document.getElementsByClassName("material-icons")[i].style.color = "#0000007d";
+    document.getElementsByClassName("carrinho")[i].style.color = "#0000007d";
    }
   
+}
+function verListaProdutoSelecionado(){
+    for ( produto of lsProduto) {
+        if(produto.carrinho){
+            console.log(produto)
+        }
+    }
+
 }
 buscarProdutos();

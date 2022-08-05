@@ -15,24 +15,42 @@ h1{
     color: white;
     text-shadow: 2px 2px 4px #000000;
 }
-.material-icons:hover{
+.carrinho{
     /*color: #e66b6b;*/
     color: #0000007d;
     position: absolute;
     right: 8px;
-    bottom: 8px;
+    bottom: 14px;
     font-size: 41px;
     cursor: pointer;
 
+}
+  
+#carrinho-principal{
+    font-size: 60px;
+    color: #000000;
+    cursor: pointer;
+    /*padding-left: 80px;*/
+    float: right;
+    
+}
+#carrinho-principal:hover{
+    color: white;
+    
+}
+
+.carrinho:hover{
+   color: #e66b6b;
 }
 .produto{
     position: relative;
     width: 500px;
     margin-top: 20px;
 }
+
 .embrulho{
-    display:grid;
-    place-items:center;
+    display: grid;
+    place-items: center;
 }
 
 p{
@@ -61,12 +79,3 @@ p{
     font-family: "Lucida console";
 }
 
-p{  
-    position:absolute;
-    float:right;
-    bottom:0px;
-    color: #e66b6b;
-    cursor: pointer;
-    font-size: 400px;
-    font-size:24px;
-}
