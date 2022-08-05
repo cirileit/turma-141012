@@ -20,6 +20,7 @@ function montarListaProdutosHtml(lsProduto){
            <p> ${produto.nome}
                <span class="valor">${produto.valor.toFixed(2)}</span> 
            </p>
+           
            <i class="material-icons carrinho" onclick="addProdutoCarrinho(${i})">&#xe8cc;</i>
        </div>
        </div>
@@ -33,9 +34,11 @@ function addProdutoCarrinho (i) {
    let produto = lsProduto[i];
    if(produto.carrinho == false){
     produto.carrinho = true;
+  
     document.getElementsByClassName("carrinho")[i].style.color = "#e66b6b";
    }else{
     produto.carrinho = false;
+    
     document.getElementsByClassName("carrinho")[i].style.color = "#0000007d";
    }
   
@@ -48,4 +51,4 @@ function verListaProdutoSelecionado(){
     }
 
 }
-buscarProdutos();
+buscarProduto();
