@@ -118,7 +118,7 @@ function verListaProdutoSelecionado(){
     let msg = `Olá gostaria de fazer o seguinte pedido:\n${pedido} \nTotal: ${total} \nNome: ${nome} \nEndereço:${endereco}`;
     msg = encodeURI(msg);
     console.log(msg)
-    let fone = '061991757568';
+    let fone = '5585607460';
     link = `https://api.whtasapp.com/send?phone=${fone}&text=${msg}`;
     window.open(link,'_blank');
 }
