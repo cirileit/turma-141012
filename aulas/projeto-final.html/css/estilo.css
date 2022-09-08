@@ -1,0 +1,165 @@
+body{
+    background-color: #443935;
+     
+}
+
+img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    box-shadow: 0px 0px 20px #6a3232;
+   
+}
+h1{
+    text-align:center;
+    font-family: "Brush Script MT";
+    font-size: 100px;
+    color: white;
+    text-shadow: 12px 12px 14px #9d1708;
+    padding-left: 180px;
+}
+.carrinho{
+    /*color: #e66b6b;*/
+    color: #84350d7d;
+    position: absolute;
+    right: 16px;
+    bottom: 11px;
+    font-size: 47px;
+    cursor: pointer;
+
+}
+.whats{
+    position: absolute;
+    color: #0e7916;
+    /*right: 1350px;
+    bottom: 249px;*/
+    font-size: 25px;
+    cursor: pointer;
+    padding-top: 80px;
+    
+}
+
+  
+#carrinho-principal{
+    font-size: 60px;
+    color: #a27013;
+    cursor: pointer;
+    padding-left: 80px;
+    vertical-align: text-bottom;
+    /*float: right;*/
+    
+}
+#carrinho-principal:hover{
+    color: white;
+    
+}
+
+
+.btMaisMenos{
+    right:10px;
+    bottom: 20px;
+    position: absolute;
+
+}
+
+.btMais, .btMenos{
+    cursor: pointer;
+    color: #f80505;
+    font-weight: bolder;
+    font-size: 32px;
+    padding: 5px 12px;
+}
+
+.quantidade{
+    position: absolute;
+    right: -65px;
+    bottom: 21px;
+    background-color: #cfbe19;
+    padding: 24px;
+    border-radius: 22%;
+    font-size: 18px;
+}
+
+.carrinho:hover{
+    color: #e66b6b;
+ }
+
+.produto{
+    position: relative;
+    width: 625px;
+    margin-top: 30px;
+}
+
+.embrulho{
+    display: grid;
+    place-items: center;
+}
+
+#formulario{
+    display: grid;
+    place-items: center;}
+    
+label{
+    font-size: 20px;
+    color: white;
+
+}
+input{
+       /* width: 552px; */
+    /* height: 20px; */
+    border: solid #fff556;
+    border-radius: 10%;
+    height: 31px;
+    width: 689px;
+    box-shadow: 0px 0px 20px #ff2020;
+}
+#btFinalizar{
+    background-color: #a28f16;
+    border: none;
+    font-size: 25px;
+    text-shadow: 12px 12px 14px #9d1708;
+    margin-top: 25px;
+    /* padding: 10px; */
+    cursor: pointer;
+    border-radius: 0%;
+    height: 101px;
+    width: 1026px;
+    box-shadow: 0px 0px 20px #d70e0e;
+    
+
+}
+
+p{
+    background-color: #efe8e4;
+    position: absolute;
+    top: -8px;
+    left: 70px;
+    width: 80%;
+    height: 73px;
+    z-index: -1;
+    padding-left: 40px;
+    padding-top: 10px;
+    border: #e66b6b solid 2px;
+    font-family: 'Lucida Handwriting';
+    box-shadow: 0px 0px 5px #000000
+}
+
+.valor{
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+    background-color: #0000007d;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-family: "Lucida console";
+}
+.footer{
+    background-color: #17414f;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 53px 562px;
+ }
+ 
