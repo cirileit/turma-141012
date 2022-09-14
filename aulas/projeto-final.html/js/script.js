@@ -7,11 +7,10 @@ function burcarProduto() {
         lsProduto = this.response;
         lsProduto = JSON.parse(lsProduto);
         montarListaProdutosHtml(lsProduto);
-        marcarProdutosSelecionadosLocalStorage();
+        marcarProdutosSelecionadosLocalStorage();    
  }
 
 }
-
 function montarListaProdutosHtml(lsProduto) {
     let listaProduto = "";
     let i = 0;
