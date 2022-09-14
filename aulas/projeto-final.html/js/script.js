@@ -97,8 +97,6 @@ function verListaProdutoSelecionado() {
    }
 
    function add(qt, i, j) {
-    // console.log(qt+" "+i);
-    // console.log(lsProduto[j]);
     lsProduto[j].quantidade += qt;
     if(lsProduto[j].quantidade == 0){
         lsProduto[j].quantidade = 1;
@@ -119,7 +117,8 @@ let pedido = '';
     }
     let nome = document.getElementById('nome').value;
     let endereco = document.getElementById('endereco').value;
-    let msg = `Olá gostaria de fazer o seguinte pedido:\n${pedido} \nTotal: ${total} \nNome: ${nome} \nEndereço: ${endereco}`;
+    let observacao = document.getElementById('observacao').value;
+    let msg = `Olá gostaria de fazer o seguinte pedido:\n${pedido} \nTotal: ${total} \nNome: ${nome} \nEndereço: ${endereco} \nObservação: ${observacao}`;
     msg = encodeURI(msg);
     console.log(msg)
     let fone = '5561991757568';

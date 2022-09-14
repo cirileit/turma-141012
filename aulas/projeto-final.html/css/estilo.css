@@ -1,6 +1,6 @@
 body{
     background-color: #443935;
-     
+  
 }
 
 img{
@@ -13,36 +13,29 @@ img{
 h1{
     text-align:center;
     font-family: "Brush Script MT";
-    font-size: 100px;
+    font-size: 63px;
     color: white;
     text-shadow: 12px 12px 14px #9d1708;
-    padding-left: 180px;
+    
 }
 .carrinho{
     /*color: #e66b6b;*/
     color: #84350d7d;
     position: absolute;
-    right: 16px;
-    bottom: 11px;
-    font-size: 47px;
+    right: -90px;
+    bottom: 5px;
+    font-size: 87px;
     cursor: pointer;
 
 }
 .whats{
-    position: absolute;
     color: #0e7916;
-    /*right: 1350px;
-    bottom: 249px;*/
-    font-size: 25px;
-    cursor: pointer;
-    padding-top: 80px;
-    
+    cursor: none;  
+   
 }
-
-  
 #carrinho-principal{
     font-size: 60px;
-    color: #a27013;
+    color: #d6cd12;
     cursor: pointer;
     padding-left: 80px;
     vertical-align: text-bottom;
@@ -56,23 +49,35 @@ h1{
 
 
 .btMaisMenos{
-    right:10px;
+    
     bottom: 20px;
     position: absolute;
+    right: -110px;
+    bottom: 5px;
+    
+    
+    
+    
 
 }
 
 .btMais, .btMenos{
     cursor: pointer;
-    color: #f80505;
+    color: #cfbe19;
     font-weight: bolder;
     font-size: 32px;
-    padding: 5px 12px;
+    padding: 5px;
+    display: grid;
+    font-family: "Lucida console";
+    
+   
+    
+  
 }
 
 .quantidade{
     position: absolute;
-    right: -65px;
+    right: -81px;
     bottom: 21px;
     background-color: #cfbe19;
     padding: 24px;
@@ -81,18 +86,23 @@ h1{
 }
 
 .carrinho:hover{
-    color: #e66b6b;
+    color: rgb(247, 255, 7);
  }
 
 .produto{
     position: relative;
-    width: 625px;
-    margin-top: 30px;
+    width: 470px;
+    margin-top: 20px;
+    display: grid;
+    /*text-align: center;*/
+   
+
 }
 
 .embrulho{
     display: grid;
     place-items: center;
+    padding: 7px 88px 7px 3px;
 }
 
 #formulario{
@@ -110,7 +120,7 @@ input{
     border: solid #fff556;
     border-radius: 10%;
     height: 31px;
-    width: 689px;
+    width: 643px;
     box-shadow: 0px 0px 20px #ff2020;
 }
 #btFinalizar{
@@ -123,7 +133,7 @@ input{
     cursor: pointer;
     border-radius: 0%;
     height: 101px;
-    width: 1026px;
+    width: 640px;
     box-shadow: 0px 0px 20px #d70e0e;
     
 
@@ -139,7 +149,7 @@ p{
     z-index: -1;
     padding-left: 40px;
     padding-top: 10px;
-    border: #e66b6b solid 2px;
+    border: #ed0808 solid 2px;
     font-family: 'Lucida Handwriting';
     box-shadow: 0px 0px 5px #000000
 }
@@ -151,14 +161,17 @@ p{
     background-color: #0000007d;
     color: white;
     font-weight: bold;
-    padding: 5px;
+    padding: 8px;
     font-family: "Lucida console";
+    
+    
 }
 .footer{
     background-color: #17414f;
     color: #fff;
-    text-align: center;
     width: 100%;
-    box-sizing: border-box;
-    padding: 53px 562px;
+    padding: 57px 0px;
+    text-align: center;
  }
+
+ 
