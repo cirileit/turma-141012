@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Layout</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        h1{
+            background-color: rgb(85, 144, 144);
+            padding: 10px;
+            text-align: center;
+
+        }
+       
+        .produto {
+            width: 98%;
+            /*width: 50%;*/
+            height: 60px;
+            background-color: rgb(24, 215, 221);
+           /* margin-top: 5px;*/
+            margin: 0 auto;
+            /* right: 0px;*/
+            
+        }
+
+        .produto img{
+            width: 20%;
+            height: 90%;
+            float:left;
+            border: solid gray;
+        }
+        .produto h2{
+            float:left;
+            width: 75%;
+            margin-left: 5px;
+           /* background-color: rgb(45, 149, 71);*/
+            height: 47%;
+            /*padding: 10% 10%;*/
+            /*vertical-align: text-bottom;*/
+            border: solid gray;
+        }
+        .produto .valor{
+            float:left;
+            margin-left: 5px;
+            margin-top: 3px;
+           /* background-color: rgb(166, 109, 39);*/
+            width: 64%;
+            height: 28%;
+            border: solid gray;
+            
+        }
+        .produto .bt {
+            float:left;
+            margin-left: 5px;
+            margin-top: 3px;
+            width: 8%;
+            height: 28%;
+            border: solid gray;
+            font-size: 17px;
+            text-align: center;
+            
+        }
+      
+        .embrulho{
+            margin-top: 5px;
+            margin-bottom: 12px;
+            /*float: left;*/
+        }
+      
+        /*.borda-cinza{
+            border: solid gray;
+        }*/
+        @media only screen and (min-width: 500px) {
+            body{
+                background-color: red;
+            }
+            .produto{
+                width: 80%;
+            }
+          
+        }
+        @media only screen and (min-width: 700px) {
+            body{
+                background-color: red;
+            }
+            .produto{
+                width: 350px;
+                /*height: ;*/
+
+            }
+            .embrulho{
+                float:left;
+                margin-left: 50px;
+            }
+            #ls-produto{
+                /*background-color: red;*/
+            width: 900px;
+            /*margin-top: 106px;*/
+        }
+        #container{
+            display: grid;
+            place-items: center;
+            /*margin: top 100px;*/
+        }
+
+        }
+    </style>
+    <header id="banner">
+        <h1>
+        Rei das Esfihas
+    </h1>
+    </header>
+   <div id="container">
+    <div id="ls-produto">
+    <div class="embrulho">
+    <div class="produto">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKRz37nzz1Tw9WcI1qjFKrzMirpR4gfaIig&usqp=CAU" alt="">
+        <h2 class="nome">Esfihas Brócolis</h2>
+        <p class="valor">10.00</p>
+<span class="material-icons bt">&#xe8cc;</span>
+</div>
+
+</div>
+<div class="embrulho">
+    <div class="produto">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKRz37nzz1Tw9WcI1qjFKrzMirpR4gfaIig&usqp=CAU" alt="">
+        <h2 class="nome">Esfihas Brócolis</h2>
+        <p class="valor">10.00</p>
+<span class="material-icons bt">&#xe8cc;</span>
+</div>
+
+</div><div class="embrulho">
+    <div class="produto">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKRz37nzz1Tw9WcI1qjFKrzMirpR4gfaIig&usqp=CAU" alt="">
+        <h2 class="nome">Esfihas Brócolis</h2>
+        <p class="valor">10.00</p>
+<span class="material-icons bt">&#xe8cc;</span>
+</div>
+</div>
+<div class="embrulho">
+    <div class="produto">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKRz37nzz1Tw9WcI1qjFKrzMirpR4gfaIig&usqp=CAU" alt="">
+        <h2 class="nome">Esfihas Brócolis</h2>
+        <p class="valor">10.00</p>
+<span class="material-icons bt">&#xe8cc;</span>
+</div>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
